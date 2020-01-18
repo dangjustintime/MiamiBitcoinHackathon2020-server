@@ -6,6 +6,10 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "keywords": [
+    "example",
+    "heroku"
+  ],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/dangjustintime/MiamiBitcoinHackathon2020-server.git"
@@ -24,5 +28,8 @@
   },
   "devDependencies": {
     "nodemon": "^2.0.2"
+  },
+  "engines": {
+    "node": "10.x"
   }
 }
