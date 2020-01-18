@@ -4,8 +4,13 @@ const Transaction = require('../models/transaction');
 
 // get all transactions
 router.get('/', (request, response) => {
-	var query = Transaction.find({});
-	response.send(query);
+	Transaction.find({}, (error, transactions) => {
+		if (error) {
+			response.send('ERROR');
+		}
+		response.json(transactions);
+	});
+	// response.send('SUCCESS');
 });
 
 // post transaction
