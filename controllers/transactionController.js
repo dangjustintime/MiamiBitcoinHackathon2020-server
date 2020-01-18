@@ -10,7 +10,6 @@ router.get('/', (request, response) => {
 		}
 		response.json(transactions);
 	});
-	// response.send('SUCCESS');
 });
 
 // post transaction
@@ -22,14 +21,6 @@ router.post('/', (request, response) => {
 		}
 	})
 	response.status(201).json(createdTransaction);
-
-	// Transaction.create(request.body, (error, createdTransaction) => {
-	// 	if (error) {
-	// 		console.log(error);
-	// 	}
-	// 	response.status(201).json(createdTransaction)
-	// });
-	// response.send('SUCCESS');
 });
 
 module.exports = router;

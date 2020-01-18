@@ -1,4 +1,5 @@
 // dependencies
+const mongoose = require('mongoose');
 const express = require('express');
 const app = express();
 const PORT = process.env.PORT || 3000;
@@ -14,6 +15,10 @@ app.use(express.json());
 // controllers
 const transactionController = require('./controllers/transactionController');
 app.use('/transactions', transactionController);
+const walletController = require('./controllers/walletController');
+app.use('/wallets', walletController);
+const addressController = require('./controllers/addressController');
+app.use('/address', addressController);
 
 // listen to port
 app.listen(PORT, () => {
@@ -21,12 +26,10 @@ app.listen(PORT, () => {
 });
 
 // connect to database
-mongoClient.connect((error, client) => {
-	if (error) throw error;
-	var db = client.db('cryptid');
-	db.collection('transactions-wallets-entities').find().toArray(function (err, result) {
-		if (err) throw err
-		console.log(result)
-	})
+mongoose.connect(URI, { useNewUrlParser: true, useUnifiedTopology: true });
+var db = mongoose.connection;
+db.on('error', console.error.bind(console, 'connection error:'));
+db.once('open', function() {
+	// we're connected!
+	console.log('database connected');
 });
-

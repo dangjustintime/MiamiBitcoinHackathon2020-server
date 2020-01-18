@@ -5,7 +5,7 @@ const walletSchema = Schema({
 	address: String,
 	balance: Number,
 	type: String,
-	btcTransactions: [{
+	transactions: [{
 		hash: String,
 		addresses: [String],
 	}]
