@@ -23,7 +23,7 @@ client.connect((error) => {
 	if (error) {
 		return console.log(error);
 	}
-	const collection = client.db("sample_airbnb").collection("listingsAndReviews");
+	const collection = client.db('cryptid').collection('transactions-wallets-entities');
 	console.log('!!! connected to database', collection);
 });
 
