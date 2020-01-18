@@ -10,6 +10,8 @@ app.use(express.static('public'));
 app.use(express.json());
 
 // controllers
+const appController = require('./controllers/appController');
+app.use('/', appController);
 const transactionController = require('./controllers/transactionController');
 app.use('/transactions', transactionController);
 const walletController = require('./controllers/walletController');
