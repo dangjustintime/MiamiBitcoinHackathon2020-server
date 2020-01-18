@@ -6,7 +6,6 @@ const axios = require('axios');
 router.get('/:address', async (request, response) => {
 	try {
 		const blockCypherResponse = await axios.get(`https://api.blockcypher.com/v1/btc/main/addrs/${request.params.address}/full?before=300000`);
-		// const blockCypherResponseJson = await blockCypherResponse;
 		console.log('&&&&&&', blockCypherResponse.data);
 		response.json(blockCypherResponse.data);
 	} catch (e) {

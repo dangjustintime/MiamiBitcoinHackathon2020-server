@@ -3,10 +3,7 @@ const mongoose = require('mongoose');
 const express = require('express');
 const app = express();
 const PORT = process.env.PORT || 3000;
-const mongoUri = process.env.MONGODB_URI || 'mongodb://localhost:27017/miami-bitcoin-hackathon';
-const MongoClient = require('mongodb').MongoClient;
-const URI = 'mongodb+srv://admin:admin@miamibitcoinhackathon2020-ox9xx.mongodb.net/test?retryWrites=true&w=majority'
-const mongoClient = new MongoClient(URI, { useUnifiedTopology: true });
+const URI = 'mongodb+srv://admin:admin@miamibitcoinhackathon2020-ox9xx.mongodb.net/cryptid?retryWrites=true&w=majority'
 
 // middleware
 app.use(express.static('public'));
