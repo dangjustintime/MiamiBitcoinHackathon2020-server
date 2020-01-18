@@ -11,12 +11,13 @@ app.use(express.json());
 
 // controllers
 
-
+// listen to port
 app.listen(PORT, () => {
 	console.log('listening to port', PORT);
 });
 
-mongoose.connect(mongoUri, { useNewUrlParser: true });
-mongoose.connection.once('open', () => {
-	console.log('connected to mongoose');
-})
+//
+// mongoose.connect(mongoUri, { useUnifiedTopology: true });
+// mongoose.connection.once('open', () => {
+// 	console.log('connected to mongoose');
+// })
