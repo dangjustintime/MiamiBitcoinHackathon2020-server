@@ -6,6 +6,6 @@ const TransactionSchema = Schema({
 	addresses: [String],
 });
 
-const BTCTransaction = mongoose.model('BTCTransaction', BTCTransactionSchema);
+const Transaction = mongoose.model('Transaction', TransactionSchema);
 
-module.exports = BTCTransaction;
+module.exports = Transaction;
