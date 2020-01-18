@@ -18,6 +18,7 @@
   "homepage": "https://github.com/dangjustintime/MiamiBitcoinHackathon2020-server#readme",
   "dependencies": {
     "express": "^4.17.1",
+    "mongodb": "^3.5.1",
     "mongoose": "^5.8.9"
   },
   "devDependencies": {

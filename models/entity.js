@@ -10,11 +10,7 @@ const entitySchema = Schema({
 		type: String,
 		btcTransactions: [{
 			hash: String,
-			size: Number,
 			addresses: [String],
-			totalInput: Number,
-			totalOutput: Number,
-			totalFee: Number,
 		}]
 	}]
 });
