@@ -15,7 +15,6 @@ router.get('/', (request, response) => {
 // post transaction
 router.post('/', (request, response) => {
 	const createdTransaction = new Transaction(request.body);
-	console.log('^^^^', request.body);
 	createdTransaction.save(error => {
 		if (error) {
 			console.log(error);

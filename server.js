@@ -3,7 +3,7 @@ const mongoose = require('mongoose');
 const express = require('express');
 const app = express();
 const PORT = process.env.PORT || 3000;
-const URI = 'mongodb+srv://admin:admin@miamibitcoinhackathon2020-ox9xx.mongodb.net/cryptid?retryWrites=true&w=majority'
+const URI = process.env.MONGODB_URI || 'mongodb+srv://admin:admin@miamibitcoinhackathon2020-ox9xx.mongodb.net/cryptid?retryWrites=true&w=majority'
 
 // middleware
 app.use(express.static('public'));
