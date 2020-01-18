@@ -12,6 +12,8 @@ app.use(express.static('public'));
 app.use(express.json());
 
 // controllers
+const transactionController = require('./controllers/transactionController');
+app.use('/transactions', transactionController);
 
 // listen to port
 app.listen(PORT, () => {
@@ -24,6 +26,6 @@ client.connect((error) => {
 		return console.log(error);
 	}
 	const collection = client.db('cryptid').collection('transactions-wallets-entities');
-	console.log('!!! connected to database', collection);
+	client.close();
 });
 

@@ -47,7 +47,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1579365237451</updated>
-      <workItem from="1579365238685" duration="4376000" />
+      <workItem from="1579365238685" duration="10306000" />
     </task>
     <servers />
   </component>
@@ -58,10 +58,10 @@
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="385" y="196" width="670" height="676" key="search.everywhere.popup" timestamp="1579370997778">
+    <state x="385" y="196" width="670" height="676" key="search.everywhere.popup" timestamp="1579372083722">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state x="385" y="196" width="670" height="676" key="search.everywhere.popup/1440.0.1288.946/0.0.1440.900@0.0.1440.900" timestamp="1579370332308" />
+    <state x="385" y="196" width="670" height="676" key="search.everywhere.popup/1440.0.1288.946/0.0.1440.900@0.0.1440.900" timestamp="1579372083722" />
     <state x="385" y="196" width="670" height="676" key="search.everywhere.popup/1440.23.1288.923/0.0.1440.900@0.0.1440.900" timestamp="1579370997778" />
   </component>
 </project>
