@@ -3,7 +3,7 @@ const router = express.Router();
 const axios = require('axios');
 
 // get address
-router.get('/', async (request, response) => {
+router.get('/', (request, response) => {
 	response.send('Miami Bitcoin Hackathon 2020');
 });
 

@@ -6,10 +6,20 @@ const Transaction = require('../models/transaction');
 router.get('/', (request, response) => {
 	Transaction.find({}, (error, transactions) => {
 		if (error) {
-			response.send('ERROR');
+			response.send(error);
 		}
 		response.json(transactions);
 	});
+});
+
+// categorize transactions
+router.put('/categorize/:id', (request, response) => {
+	Transaction.findByIdAndUpdate(request.params.id, { category: request.body }, (error, categorizedTransaction) => {
+		if (error) {
+			response.send(error);
+		}
+		response.json(categorizedTransactions);
+	})
 });
 
 // post transaction
@@ -17,7 +27,7 @@ router.post('/', (request, response) => {
 	const createdTransaction = new Transaction(request.body);
 	createdTransaction.save(error => {
 		if (error) {
-			console.log(error);
+			response.send(error);
 		}
 	})
 	response.status(201).json(createdTransaction);
