@@ -6,7 +6,7 @@ const Entity = require('../models/entity');
 router.get('/', (request, response) => {
 	Entity.find({}, (error, entities) => {
 		if (error) {
-			response.send('ERROR');
+			response.send(error);
 		}
 		response.json(entities);
 	});
@@ -35,13 +35,11 @@ router.post('/', (request, response) => {
 
 // delete entity
 router.delete('/:id', (request, response) => {
-	Entity.findOneAndDelete({})
-	const createdEntity = new Entity(request.body);
-	createdEntity.save(error => {
+	Entity.findByIdAndDelete(request.params.id, (error, deletedEntity) => {
 		if (error) {
-			console.log(error);
+			response.send(error);
 		}
+		response.json(deletedEntity);
 	})
-	response.status(201).json(createdEntity);
 });
 module.exports = router;
