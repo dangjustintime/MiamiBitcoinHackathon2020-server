@@ -8,17 +8,17 @@ router.get('/', (request, response) => {
 		if (error) {
 			response.send('ERROR');
 		}
-		response.json(entities);.
+		response.json(entities);
 	});
 });
 
 // get entity by address
-router.get('/:address', (request, response) => {
-	Entity.find({ addresses: { address: request.params.address }}, (error, foundEntity) => {
+router.post('/address', (request, response) => {
+	Entity.find({}, { addresses: [ {$in: ['dddddddd']} ] }, (error, foundEntities) => {
 		if (error) {
-			response.send('ERROR');
+			response.send(error);
 		}
-		response.json(foundEntity);.
+		response.json(foundEntities);
 	});
 });
 
