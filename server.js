@@ -8,8 +8,6 @@ const app = express();
 const PORT = process.env.PORT || 3000;
 const URI = process.env.MONGODB_URI;
 
-console.log(URI);
-
 // middleware
 app.use(express.static('public'));
 app.use(express.json());
@@ -19,13 +17,15 @@ app.use(cors());
 const appController = require('./controllers/appController');
 app.use('/', appController);
 const entityController = require('./controllers/entityController');
-app.use('/entity', entityController);
+app.use('/entities', entityController);
 const transactionController = require('./controllers/transactionController');
 app.use('/transactions', transactionController);
 const walletController = require('./controllers/walletController');
 app.use('/wallets', walletController);
 const addressController = require('./controllers/addressController');
 app.use('/address', addressController);
+const scamController = require('./controllers/scamController');
+app.use('/scams', scamController);
 
 // listen to port
 app.listen(PORT, () => {
