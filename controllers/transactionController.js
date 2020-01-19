@@ -14,11 +14,11 @@ router.get('/', (request, response) => {
 
 // categorize transactions
 router.put('/categorize/:id', (request, response) => {
-	Transaction.findByIdAndUpdate(request.params.id, { category: request.body }, (error, categorizedTransaction) => {
+	Transaction.findByIdAndUpdate(request.params.id, { category: request.body.category }, (error, categorizedTransaction) => {
 		if (error) {
 			response.send(error);
 		}
-		response.json(categorizedTransactions);
+		response.json(categorizedTransaction);
 	})
 });
 

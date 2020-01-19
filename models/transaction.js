@@ -5,14 +5,7 @@ const TransactionSchema = new Schema({
 	hash: String,
 	addresses: [String],
 	entityId: String,
-	to: [{
-		name: String,
-		category: String,
-		addresses: [{
-			address: String,
-			currency: String
-		}]
-	}],
+	to: [String],
 	from: [{
 		name: String,
 		category: String,
