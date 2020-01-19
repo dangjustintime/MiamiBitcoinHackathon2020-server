@@ -6,7 +6,7 @@ const express = require('express');
 const cors = require('cors');
 const app = express();
 const PORT = process.env.PORT || 3000;
-const URI = process.env.MONGO_DB_URI;
+const URI = process.env.MONGODB_URI;
 
 // middleware
 app.use(express.static('public'));
