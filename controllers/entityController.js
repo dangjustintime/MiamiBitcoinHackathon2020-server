@@ -27,10 +27,20 @@ router.post('/', (request, response) => {
 	const createdEntity = new Entity(request.body);
 	createdEntity.save(error => {
 		if (error) {
-			console.log(error);
+			response.send(error);
 		}
 	})
 	response.status(201).json(createdEntity);
+});
+
+// assign entity to transaction
+router.put('/assign/:id', (request, response) => {
+	Entity.findByIdAndUpdate(request.params.id, { $push: { addresses: request.body } }, (error, assignedEntity) => {
+		if (error) {
+			response.send(error);
+		}
+		response.send(assignedEntity);
+	})
 });
 
 // delete entity

@@ -6,7 +6,7 @@ const entitySchema = Schema({
 	category: String,
 	addresses: [{
 		address: String,
-		type: String
+		currency: String
 	}]
 });
 

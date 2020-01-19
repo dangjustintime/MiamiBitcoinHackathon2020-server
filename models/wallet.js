@@ -4,7 +4,7 @@ const Schema = mongoose.Schema;
 const walletSchema = Schema({
 	address: String,
 	balance: Number,
-	type: String,
+	currency: String,
 	transactions: [{
 		hash: String,
 		addresses: [String],
