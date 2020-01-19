@@ -33,4 +33,14 @@ router.post('/', (request, response) => {
 	response.status(201).json(createdTransaction);
 });
 
+// delete transaction
+router.delete('/:id', (request, response) => {
+	Transaction.findByIdAndDelete(request.params.id, (error, deletedTransaction) => {
+		if (error) {
+			response.send(error);
+		}
+		response.json(deletedTransaction);
+	});
+})
+
 module.exports = router;
