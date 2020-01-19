@@ -3,15 +3,10 @@ const Schema = mongoose.Schema;
 
 const entitySchema = Schema({
 	name: String,
-	private: Boolean,
-	wallets: [{
+	category: String,
+	addresses: [{
 		address: String,
-		balance: Number,
-		type: String,
-		btcTransactions: [{
-			hash: String,
-			addresses: [String],
-		}]
+		type: String
 	}]
 });
 
