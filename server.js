@@ -4,7 +4,8 @@ const express = require('express');
 const cors = require('cors');
 const app = express();
 const PORT = process.env.PORT || 3000;
-const URI = process.env.MONGODB_URI || 'mongodb+srv://admin:admin@miamibitcoinhackathon2020-ox9xx.mongodb.net/cryptid?retryWrites=true&w=majority'
+const MONGO_DB_URI = require('environment');
+const URI = process.env.MONGODB_URI || MONGO_DB_URI;
 
 // middleware
 app.use(express.static('public'));

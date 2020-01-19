@@ -14,7 +14,7 @@ router.get('/', (request, response) => {
 
 // get entity by address
 router.post('/address', (request, response) => {
-	Entity.find({}, { addresses: [ {$in: ['dddddddd']} ] }, (error, foundEntities) => {
+	Entity.find({}, { addresses: { $elemMatch: {$in: request.body.addresses} } }, (error, foundEntities) => {
 		if (error) {
 			response.send(error);
 		}
@@ -33,4 +33,15 @@ router.post('/', (request, response) => {
 	response.status(201).json(createdEntity);
 });
 
+// delete entity
+router.delete('/:id', (request, response) => {
+	Entity.findOneAndDelete({})
+	const createdEntity = new Entity(request.body);
+	createdEntity.save(error => {
+		if (error) {
+			console.log(error);
+		}
+	})
+	response.status(201).json(createdEntity);
+});
 module.exports = router;
