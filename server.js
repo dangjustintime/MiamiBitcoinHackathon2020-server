@@ -8,6 +8,8 @@ const app = express();
 const PORT = process.env.PORT || 3000;
 const URI = process.env.MONGODB_URI;
 
+console.log(URI);
+
 // middleware
 app.use(express.static('public'));
 app.use(express.json());

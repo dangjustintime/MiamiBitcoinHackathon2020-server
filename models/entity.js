@@ -2,12 +2,12 @@ const mongoose = require('mongoose');
 const Schema   = mongoose.Schema;
 
 const entitySchema = Schema({
-  name: String,
-  category: String,
-  addresses: [ {
-    address: String,
-    type: String
-  } ]
+	name: String,
+	category: String,
+	addresses: [{
+		address: String,
+		currency: String
+	}]
 });
 
 entitySchema.statics.findManyByAddress = function (addresses) {
