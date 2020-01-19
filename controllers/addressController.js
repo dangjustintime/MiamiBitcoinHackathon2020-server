@@ -1,15 +1,17 @@
-const express = require('express');
-const router = express.Router();
-const axios = require('axios');
+const express     = require('express');
+const router      = express.Router();
+const axios       = require('axios');
+const BlockCypher = require('../services/BlockCypher')
 
 // get address
 router.get('/:address', async (request, response) => {
-	try {
-		const blockCypherResponse = await axios.get(`https://api.blockcypher.com/v1/btc/main/addrs/${request.params.address}/full?before=300000`);
-		response.json(blockCypherResponse.data);
-	} catch (e) {
-		console.log(e);
-	}
+  try {
+    const { address, txs, balance, total_received, total_sent } = await BlockCypher.getAddress(request.params.address)
+    // debugger
+    response.json({ address, txs, balance, total_received, total_sent });
+  } catch (e) {
+    console.log(e);
+  }
 });
 
 module.exports = router;
